@@ -1,0 +1,14 @@
+import 'dart:async';
+import 'dart:ui';
+
+import 'package:flame/components.dart';
+import 'package:flame_test/src/brick_breaker.dart';
+
+class PlayArea extends RectangleComponent with HasGameReference<BrickBreaker> {
+  PlayArea() : super(paint: Paint()..color = const Color(0xfff2e8cf));
+  @override
+  FutureOr<void> onLoad() async {
+    super.onLoad();
+    size = Vector2(game.width, game.height);
+  }
+}
